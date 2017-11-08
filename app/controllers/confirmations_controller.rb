@@ -11,7 +11,7 @@ class ConfirmationsController < ApplicationController
 
   def validate_token
     return if ConfirmationService.new(params[:email]).valid_token?(confirm_params[:token])
-    raise '无效的token或token已过期，请重新注册'
+    raise SimpleAuth::ConfirmTokenError
   end
 
   def confirm_params

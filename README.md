@@ -21,6 +21,8 @@ Or install it yourself as:
 $ gem install simple_auth
 ```
 
+
+
 ## Contributing
 Contribution directions go here.
 

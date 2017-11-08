@@ -16,4 +16,10 @@ module SimpleAuth
       'invalid token'
     end
   end
+
+  class ConfirmTokenError < StandardError
+    def message
+      '无效的token或token已过期，请重新注册'
+    end
+  end
 end

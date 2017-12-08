@@ -4,7 +4,7 @@ require 'jwt'
 module SimpleAuth
   module JsonWebToken
     def self.encode(payload)
-      payload[:exp] = SimpleAuth.configuration.exp.to_i || 7.days.from_now.to_i
+      payload[:exp] = 7.days.from_now.to_i
       secret_key = SimpleAuth.configuration.secret_key
       JWT.encode(payload, secret_key, 'HS256')
     end
